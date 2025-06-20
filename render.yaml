@@ -10,3 +10,5 @@ services:
     envVars:
       - key: GOOGLE_MAPS_API_KEY
         value: AIzaSyBMpVJjmrlz7Kq3la3jeQ1JlkD9oYsdny0
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: "0"
