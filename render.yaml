@@ -1,14 +1,9 @@
 services:
   - type: worker
     name: delhi-pincode-scraper
-    env: python
+    env: docker
     repo: https://github.com/Jaikarwa-19/Delhi-Pincode-Scraper
-    buildCommand: |
-      pip install -r requirements.txt
-      PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
-    startCommand: python main.py
+    dockerfilePath: Dockerfile
     envVars:
       - key: GOOGLE_MAPS_API_KEY
         value: AIzaSyBMpVJjmrlz7Kq3la3jeQ1JlkD9oYsdny0
-      - key: PLAYWRIGHT_BROWSERS_PATH
-        value: "0"
