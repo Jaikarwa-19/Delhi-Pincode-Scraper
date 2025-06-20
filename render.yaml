@@ -2,7 +2,7 @@ services:
   - type: worker
     name: delhi-pincode-scraper
     env: python
-    repo: https://github.com/Jaikarwa-19/Delhi-Pincode-Scraper
+    repo: https://github.com/JaikARwa-19/Delhi-Pincode-Scraper
     buildCommand: |
       pip install -r requirements.txt
       playwright install chromium
