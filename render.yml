@@ -1,0 +1,12 @@
+services:
+  - type: worker
+    name: delhi-pincode-scraper
+    env: python
+    repo: https://github.com/Jaikarwa-19/Delhi-Pincode-Scraper
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install
+    startCommand: python main.py
+    envVars:
+      - key: GOOGLE_MAPS_API_KEY
+        value: AIzaSyBMpVJjmrlz7Kq3la3jeQ1JlkD9oYsdny0
