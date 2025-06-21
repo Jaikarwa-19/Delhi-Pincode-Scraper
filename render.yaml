@@ -1,9 +1,0 @@
-services:
-  - type: worker
-    name: delhi-pincode-scraper
-    env: docker
-    repo: https://github.com/Jaikarwa-19/Delhi-Pincode-Scraper
-    dockerfilePath: Dockerfile
-    envVars:
-      - key: GOOGLE_MAPS_API_KEY
-        value: AIzaSyBMpVJjmrlz7Kq3la3jeQ1JlkD9oYsdny0
