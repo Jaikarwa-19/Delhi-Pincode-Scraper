@@ -1,16 +1,20 @@
-FROM mcr.microsoft.com/playwright/python:v1.43.1-focal
+# Use a verified Playwright image with all browser dependencies
+FROM mcr.microsoft.com/playwright/python:v1.43.1-jammy
 
 # Set working directory
 WORKDIR /app
 
-# Copy everything to the container
+# Copy all project files
 COPY . .
 
 # Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
-# (Redundant but safe) Ensure Playwright dependencies are installed
+# Install Playwright browser binaries
 RUN playwright install
 
-# Run your script
+# Set environment variable (you can remove this if setting it from Render UI)
+# ENV GOOGLE_MAPS_API_KEY=your-key-here
+
+# Run the main script
 CMD ["python", "main.py"]
